@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- generics -->
+    <link rel="icon" href="img/favicon/robot-head-4-32-290067.png" sizes="32x32">
+    <link rel="icon" href="img/favicon/robot-head-4-32-290067.png" sizes="57x57">
+    <link rel="icon" href="img/favicon/robot-head-4-32-290067.png" sizes="76x76">
+    <link rel="icon" href="img/favicon/robot-head-4-32-290067.png" sizes="96x96">
+    <link rel="icon" href="img/favicon/robot-head-4-32-290067.png" sizes="128x128">
+    <link rel="icon" href="img/favicon/robot-head-4-32-290067.png" sizes="228x228">
+
+    <!-- Android -->
+    <link rel="shortcut icon" sizes="196x196" href=“img/favicon/robot-head-4-32-290067.png">
+
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="img/favicon/robot-head-4-32-290067.png" sizes="120x120">
+
+
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="css/slate.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+
+<nav class="navbar">
+    <div>
+        <button class="btn btn-link" type="button" data-toggle="collapse"
+                data-target="#side-nav" aria-controls="side-nav" aria-expanded="false"
+                aria-label="Toggle docs navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false"><title>
+                Menu</title>
+                <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10"
+                      d="M4 7h22M4 15h22M4 23h22"></path>
+            </svg>
+        </button>
+    </div>
+</nav>
+
+<!-- Main view goes here-->
+<div ng-view></div>
+
+
+<!-- Bottom navigation -->
+<ul class="nav justify-content-center">
+    <li class="nav-item"><a class="nav-link" href="#!/status">Status</a></li>
+    <li class="nav-item"><a class="nav-link" href="#!/inventory">Inventory</a></li>
+    <li class="nav-item"><a class="nav-link" href="#!/Data">Data</a></li>
+</ul>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/inventory/inventory.js"></script>
+<script src="js/status/status.js"></script>
+<script src="js/data/data.js"></script>
+
+
+</body>
+</html>

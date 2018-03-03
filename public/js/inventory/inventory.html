@@ -1,0 +1,69 @@
+<div class="container-fluid text-center">
+    <h2>Items</h2>
+    <!-- FORM TO CREATE INVENTORY ITEMS -->
+    <div id="inventory-form" class="jumbotron">
+        <form ng>
+            <legend>
+                Add new Item
+            </legend>
+            <div class="form-check-inline">
+                <label for="item_name" class="sr-only">
+                    Item
+                </label>
+                <input id="item_name" type="text" class="form-control text-center"
+                       placeholder="Item" ng-model="formData.text" ng-required="true">
+
+
+                <!-- Amazon or ebay url to item -->
+                <label for="item_url" class="sr-only">
+                    Input item web page url if one exists
+                </label>
+                <input id="item_url" type="text" class="form-control text-center"
+                       placeholder="url" ng-model="formData.url">
+
+                <!-- item Category gets set here -->
+                <label for="item_category" class="sr-only">
+                    Input Category
+                </label>
+                <input id="item_category" type="text" class="form-control text-center"
+                       placeholder="Category" ng-model="formData.category">
+                <!-- createToDo() WILL CREATE NEW TODOS -->
+                <button type="submit" class="btn btn-primary" ng-click="createItem()">Add</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="inventory" class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Item</th>
+                <!--<th scope="col">Link</th>-->
+                <th scope="col">Category</th>
+                <!--<th scope="col">Storage</th>-->
+                <th scope="col">Id</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in inventory">
+                <td><a href="{{ item.url }}">{{ item.text }}</a></td>
+                <td>{{ item.category }}</td>
+                <!--<td>{{ item.url }}</td>-->
+
+                <!-- TODO add these fields in later when I can actually populate them
+                <!--<td>{{ item.reciept }}</td>-->
+                <!--<td>{{ item.manual }}</td>-->
+                <!--<td>{{ item.matinence }}</td>-->
+                <td>{{ item._id }}</td>
+                <td>
+                    <button type="submit" class="btn btn-danger" ng-click="deleteItem(item._id)">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<pre>{{ inventory | json }}</pre>
+
+
